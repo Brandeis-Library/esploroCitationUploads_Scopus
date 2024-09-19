@@ -3,4 +3,6 @@ This Python script will take a simple text file containing DOIs from Esploro and
 
 To run the code, simply add your Scopus API key to the code and ensure you have each of the four dependencies installed in your Python3 environment.
 
+Once your files are generated, be sure to open each file and remove the rows where the total citation count is blank or contains the word "Error."
+
 Assistance in generating this code goes to Perplexity.ai. I had to make some adjustments and corrections, but the core elements of this code are AI generated.
