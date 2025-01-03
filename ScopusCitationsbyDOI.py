@@ -2,6 +2,7 @@ import pandas as pd
 import requests
 import math
 import openpyxl
+from tqdm import tqdm
 
 # Load the DOIs from a local file
 with open('dois.txt', 'r') as file:
@@ -14,7 +15,7 @@ API_KEY = 'INSERT_API_KEY_HERE'
 output_data = []
 
 # Loop through each DOI and fetch citation counts
-for doi in dois:
+for doi in tqdm(dois, desc="Processing DOIs", unit="DOI"):
     # Make a request to the Scopus API
     response = requests.get(
         f'https://api.elsevier.com/content/abstract/doi/{doi}',
@@ -49,4 +50,4 @@ for i in range(num_files):
     # Export to Excel
     subset_df.to_excel(f'citation_counts_{i+1}.xlsx', index=False, engine='openpyxl')
 
-print(f"Data has been split and exported into {num_files} Excel files.")
+print(f"Data has been split and exported into {num_files} Excel files.")import pandas as pd
