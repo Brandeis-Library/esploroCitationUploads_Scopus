@@ -50,4 +50,4 @@ for i in range(num_files):
     # Export to Excel
     subset_df.to_excel(f'citation_counts_{i+1}.xlsx', index=False, engine='openpyxl')
 
-print(f"Data has been split and exported into {num_files} Excel files.")import pandas as pd
+print(f"Data has been split and exported into {num_files} Excel files.")
